@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-()9_h6su6)fp6pd!%h5lgfjxj+-73v(-%$a1e7qy^9yc9m4vf)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+
+ALLOWED_HOSTS = [
+    'z7v-curious-poisson.circumeo-apps.net',
+    '127.0.0.1',  # Local development
+    'localhost'   # Local development
+]
+
 
 
 # Application definition
@@ -41,9 +48,13 @@ INSTALLED_APPS = [
     # locals 
     'core',
     'userauths',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    # Other middleware...
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,6 +63,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ALLOWED_ORIGINS = [
+    'https://z7v-curious-poisson.circumeo-apps.net',
+]
+
+# If you need to allow credentials (cookies, etc.):
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://z7v-curious-poisson.circumeo-apps.net',
+]
+
 
 ROOT_URLCONF = 'ecomprj.urls'
 
