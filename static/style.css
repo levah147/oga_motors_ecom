@@ -1,0 +1,488 @@
+
+/* Custom Styles */
+
+/* Header and Footer */
+header, footer {
+    background: linear-gradient(90deg, #232f3e, #ff9900);
+    color: white;
+}
+
+header input[type="text"] {
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+/* Product Grid */
+.product-grid {
+    padding: 2rem 0;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #131a22;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #232f3e;
+}
+
+.btn-primary {
+    background-color: #ff9900;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e68a00;
+}
+
+.card {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge Styling */
+.cart-counter .badge {
+    top: -5px;
+    right: -10px;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(90deg, #ff9900, #131a22);
+    color: white;
+    padding: 15px 0;
+}
+
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+header input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    background: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+header input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff9900;
+}
+
+header .text-white {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Cart Badge */
+.cart-counter .badge {
+    top: -10px;
+    right: -10px;
+    background-color: #ff9900;
+    font-size: 0.8rem;
+}
+
+/* Product Grid */
+.product-grid {
+    padding: 4rem 0;
+    background-color: #f8f8f8;
+}
+
+.product-grid .row {
+    gap: 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card img {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #232f3e;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #ff9900;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #ff9900;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e68a00;
+    transform: translateY(-3px);
+}
+
+.card .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: #232f3e;
+    color: white;
+    font-weight: bold;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.modal-body p {
+    font-size: 1.1rem;
+    color: #232f3e;
+}
+
+/* Footer Section */
+footer {
+    background: linear-gradient(90deg, #ff9900, #131a22);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-grid .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    header input[type="text"] {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(90deg, #ff9900, #131a22);
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+header .search-container {
+    width: 50%;
+    position: relative;
+}
+
+header input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 30px;
+    border: none;
+    background: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+header input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff9900;
+}
+
+header .text-white {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Cart Badge */
+.cart-counter .badge {
+    top: -10px;
+    right: -10px;
+    background-color: #ff9900;
+    font-size: 0.8rem;
+}
+
+/* Product Grid */
+.product-grid {
+    padding: 4rem 0;
+    background-color: #f8f8f8;
+}
+
+.product-grid .row {
+    gap: 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card img {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #232f3e;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #ff9900;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #ff9900;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e68a00;
+    transform: translateY(-3px);
+}
+
+.card .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: #232f3e;
+    color: white;
+    font-weight: bold;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.modal-body p {
+    font-size: 1.1rem;
+    color: #232f3e;
+}
+
+/* Footer Section */
+footer {
+    background: linear-gradient(90deg, #232f3e, #131a22);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .product-grid .row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .product-grid .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    header input[type="text"] {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    header input[type="text"] {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
