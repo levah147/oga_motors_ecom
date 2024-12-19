@@ -1,4 +1,7 @@
 {% extends "core/base.html" %}
+
+
+{% block content %}
 <h1>SIGN UP PAGES</h1>
 {% if form.errors %}
 <div style="background-color: red;">
@@ -21,3 +24,5 @@
 <p>I already have an account <a href="{% url 'userauths:login' %}"> Login</a></p>
 </form>
 <!-- background: linear-gradient(135deg, #dae0e7, #98c1f0); -->
+
+{% endblock %}
