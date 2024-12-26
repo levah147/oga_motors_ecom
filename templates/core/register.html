@@ -1,0 +1,369 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Manuel/index-13.html  22 Nov 2019 09:59:06 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Manuel online shop</title>   <title>{% block title %} {% endblock %}</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Manuel - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/icons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/icons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/icons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/images/icons/site.html' %}">
+    <link rel="mask-icon" href="{% static 'assets/images/icons/safari-pinned-tab.svg" color="#666666' %}">
+    <link rel="shortcut icon" href="{% static 'assets/images/icons/favicon.ico' %}">
+    <meta name="apple-mobile-web-app-title" content="Manuel">
+    <meta name="application-name" content="Manuel">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="{% static 'assets/images/icons/browserconfig.xml' %}">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{% static 'assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css' %}">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/magnific-popup/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/jquery.countdown.css' %}">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/skins/skin-demo-13.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/demos/demo-13.css' %}">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header header-10 header-intro-clearance">
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-left">
+                        <a href="tel:#"><i class="icon-phone"></i>Call: +234 8167 791 934</a>
+                    </div><!-- End .header-left -->
+
+                    <div class="header-right">
+
+                        <ul class="top-menu">
+                            <li>
+                                <a href="#">Login</a>
+                                <ul>
+                                    <li>
+                                        <div class="header-dropdown">
+                                            <a href="#">USD</a>
+                                            <div class="header-menu">
+                                                <ul>
+                                                    <li><a href="#">Eur</a></li>
+                                                    <li><a href="#">Usd</a></li>
+                                                </ul>
+                                            </div><!-- End .header-menu -->
+                                        </div><!-- End .header-dropdown -->
+                                    </li>
+                                    <li>   
+                                        <div class="header-dropdown">
+                                            <a href="#">Engligh</a>
+                                            <div class="header-menu">
+                                                 <ul>
+                                                    <li><a href="#">English</a></li>
+                                                    <li><a href="#">French</a></li>
+                                                    <li><a href="#">Spanish</a></li>
+                                                </ul> 
+                                            </div><!-- End .header-menu -->
+                                        </div><!-- End .header-dropdown -->
+                                    </li>
+                                    <li class="login">
+                                        {% if request.user.is_authenticated %}
+                                        <a href="{% url 'userauths:logout' %}">Sign out</a> / 
+                                        {% else %}
+                            
+                                        <a href="{% url 'userauths:login' %}" >Sign In</a>
+                                        {% endif %}
+                        
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul><!-- End .top-menu -->
+                    </div><!-- End .header-right -->
+                </div><!-- End .container -->
+            </div><!-- End .header-top -->
+
+
+            <div class="header-middle">
+                <div class="container">
+                    <div class="header-left">
+                        <button class="mobile-menu-toggler">
+                            <span class="sr-only">Toggle mobile menu</span>
+                            <i class="icon-bars"></i>
+                        </button>
+                        
+                        <a href="index.html" class="logo">
+                            <img src="{% static 'assets/images/demos/demo-13/logo.png' %}" alt="Manuel Logo" width="105" height="25">
+                        </a>
+                    </div><!-- End .header-left -->
+
+
+
+
+                    <div class="header-center">
+                        <div class="header-search header-search-extended header-search-visible header-search-no-radius d-none d-lg-block">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
+                            <form action="#" method="get">
+                                <div class="header-search-wrapper search-wrapper-wide">
+                                    <div class="select-custom">
+                                        <select id="cat" name="cat">
+                                            <option value="">All Departments</option>
+                                            <option value="1">Fashion</option>
+                                            <option value="2">- Women</option>
+                                            <option value="3">- Men</option>
+                                            <option value="4">- Jewellery</option>
+                                            <option value="5">- Kids Fashion</option>
+                                            <option value="6">Electronics</option>
+                                            <option value="7">- Smart TVs</option>
+                                            <option value="8">- Cameras</option>
+                                            <option value="9">- Games</option>
+                                            <option value="10">Home &amp; Garden</option>
+                                            <option value="11">Motors</option>
+                                            <option value="12">- Cars and Trucks</option>
+                                            <option value="15">- Boats</option>
+                                            <option value="16">- Auto Tools &amp; Supplies</option>
+                                        </select>
+                                    </div><!-- End .select-custom -->
+                                    <label for="q" class="sr-only">Search</label>
+                                    <input type="search" class="form-control" name="q" id="q" placeholder="Search product ..." required>
+                                    <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                                </div><!-- End .header-search-wrapper -->
+                            </form>
+                        </div><!-- End .header-search -->
+                    </div>
+
+                    <div class="header-right">
+                        <div class="header-dropdown-link">
+                            <div class="dropdown compare-dropdown">
+                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" title="Compare Products" aria-label="Compare Products">
+                                    <i class="icon-random"></i>
+                                    <span class="compare-txt">Compare</span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="compare-products">
+                                        <li class="compare-product">
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                            <h4 class="compare-product-title"><a href="product.html">Blue Night Dress</a></h4>
+                                        </li>
+                                        <li class="compare-product">
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                            <h4 class="compare-product-title"><a href="product.html">White Long Skirt</a></h4>
+                                        </li>
+                                    </ul>
+
+                                    <div class="compare-actions">
+                                        <a href="#" class="action-link">Clear All</a>
+                                        <a href="#" class="btn btn-outline-primary-2"><span>Compare</span><i class="icon-long-arrow-right"></i></a>
+                                    </div>
+                                </div><!-- End .dropdown-menu -->
+                            </div><!-- End .compare-dropdown -->
+
+                            <a href="wishlist.html" class="wishlist-link">
+                                <i class="icon-heart-o"></i>
+                                <span class="wishlist-count">3</span>
+                                <span class="wishlist-txt">Wishlist</span>
+                            </a>
+
+                            <div class="dropdown cart-dropdown">
+                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                    <i class="icon-shopping-cart"></i>
+                                    <span class="cart-count">2</span>
+                                    <span class="cart-txt">Cart</span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-cart-products">
+                                        <div class="product">
+                                            <div class="product-cart-details">
+                                                <h4 class="product-title">
+                                                    <a href="product.html">Beige knitted elastic runner shoes</a>
+                                                </h4>
+
+                                                <span class="cart-product-info">
+                                                    <span class="cart-product-qty">1</span>
+                                                    x $84.00
+                                                </span>
+                                            </div><!-- End .product-cart-details -->
+
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="{% static 'assets/images/products/cart/product-1.jpg' %}" alt="product">
+                                                </a>
+                                            </figure>
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                        </div><!-- End .product -->
+
+                                        <div class="product">
+                                            <div class="product-cart-details">
+                                                <h4 class="product-title">
+                                                    <a href="product.html">Blue utility pinafore denim dress</a>
+                                                </h4>
+
+                                                <span class="cart-product-info">
+                                                    <span class="cart-product-qty">1</span>
+                                                    x $76.00
+                                                </span>
+                                            </div><!-- End .product-cart-details -->
+
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="{% static 'assets/images/products/cart/product-2.jpg' %}" alt="product">
+                                                </a>
+                                            </figure>
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                        </div><!-- End .product -->
+                                    </div><!-- End .cart-product -->
+
+                                    <div class="dropdown-cart-total">
+                                        <span>Total</span>
+
+                                        <span class="cart-total-price">$160.00</span>
+                                    </div><!-- End .dropdown-cart-total -->
+
+                                    <div class="dropdown-cart-action">
+                                        <a href="cart.html" class="btn btn-primary">View Cart</a>
+                                        <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
+                                    </div><!-- End .dropdown-cart-total -->
+                                </div><!-- End .dropdown-menu -->
+                            </div><!-- End .cart-dropdown -->
+                        </div>
+                    </div><!-- End .header-right -->
+                </div><!-- End .container -->
+            </div><!-- End .header-middle -->
+
+            
+                
+                        
+
+
+
+
+
+
+
+
+
+
+    <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('{% static 'assets/images/backgrounds/login-bg.jpg' %}')">
+        <div class="container">
+            <div class="form-box">
+                <div class="form-tab">
+                    <ul class="nav nav-pills nav-fill" role="tablist">
+                        <li class="nav-item">
+                             <!-- <a class="nav-link" id="signin-tab-2" data-toggle="tab" href="{% url 'userauths:login' %}" role="tab" aria-controls="signin-2" aria-selected="false">Sign In</a>  -->
+                            <a class="nav-link" href="{% url 'userauths:login' %}">Sign In</a>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'userauths:register' %}">Register</a>
+                             <!-- <a class="nav-link active" id="register-tab-2" data-toggle="tab" href="#register-2" role="tab" aria-controls="register-2" aria-selected="true">Register</a>  -->
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
+                            <form action="#" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="singin-email-2">Username *</label>
+                                <p class="form-control" > {{form.username}} </p>
+        
+                                    <!-- <input type="text" class="form-control" id="singin-email-2" name="email" placeholder="john" required> -->
+                                </div><!-- End .form-group -->
+                      
+                    
+                               
+                                <div class="form-group">
+                                    <label for="singin-email-2">Email address*</label>
+                               <p class="form-control" >{{form.email}} </p>
+                                 
+                                    <!-- <input type="text" class="form-control" id="singin-email-2" name="email" placeholder="john@gmail.com" required> -->
+                                </div><!-- End .form-group -->
+
+                                <div class="form-group">
+                                    <label for="singin-email-2">Password *</label>
+                               <p class="form-control" >{{form.password1}} </p>
+                                  
+                                    <!-- <input type="text" class="form-control" id="singin-email-2" name="email" placeholder="********" required> -->
+                                </div><!-- End .form-group -->
+
+
+                                <div class="form-group">
+                                    <label for="singin-password-2">Confirm Password *</label>
+                               <p class="form-control" >{{form.password2}}</p> 
+                                   
+                                    <!-- <input type="password" class="form-control" id="singin-password-2" name="password" placeholder="*********" required> -->
+                                </div><!-- End .form-group -->
+
+                                <div class="form-footer">
+                                    <button type="submit" class="btn btn-outline-primary-2">
+                                        <span>SIGN UP</span>
+                                        <i class="icon-long-arrow-right"></i>
+                                    </button>
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="register-policy-2" required>
+                                        <label class="custom-control-label" for="register-policy-2">I agree to the <a href="#">privacy policy</a> *</label>
+                                    </div><!-- End .custom-checkbox -->
+                                </div><!-- End .form-footer -->
+
+                                   
+                            </form>
+                            <div class="form-choice">
+                                <p class="text-center">or sign in with</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="#" class="btn btn-login btn-g">
+                                            <i class="icon-google"></i>
+                                            Login With Google
+                                        </a>
+                                    </div><!-- End .col-6 -->
+                                    <div class="col-sm-6">
+                                        <a href="#" class="btn btn-login btn-f">
+                                            <i class="icon-facebook-f"></i>
+                                            Login With Facebook
+                                        </a>
+                                    </div><!-- End .col-6 -->
+                                </div><!-- End .row -->
+                            </div><!-- End .form-choice -->
+                        </div><!-- .End .tab-pane -->
+                       
+
+                               
+
+                </div><!-- End .form-tab -->
+            </div><!-- End .form-box -->
+        </div><!-- End .container -->
+    </div><!-- End .login-page section-bg -->
+</main><!-- End .main -->
+
+
+
+
+
+
+  <!-- Plugins JS File -->
+  <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.hoverIntent.min.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/js/superfish.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap-input-spinner.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.plugin.min.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+  
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/demos/demo-13.js' %}"></script>
+</body>
+

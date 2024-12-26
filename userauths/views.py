@@ -32,7 +32,7 @@ def register_view(request):
         'form': form,
     }
 
-    return render(request, 'userauths/sign-up.html', context)
+    return render(request, 'core/register.html', context)
 
 
 def login_view (request):
@@ -59,7 +59,7 @@ def login_view (request):
             messages.warning(request, f'User with {email} does not exist')
 
 
-    return render(request,"userauths/login.html")
+    return render(request,"core/login.html")
 
 def logout_view(request):
     logout(request)
