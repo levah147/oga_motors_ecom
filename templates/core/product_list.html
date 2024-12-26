@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+
+
+
+{% block content %}
+{% include "core/nav.html" %}
+
+
+<h1>Products List </h1>
+
+{% for p in products%}
+<div class="col-md-3">
+    <div class="card product-card">
+       <p><a href="">-{{p.get_precentage |floatformat:0 }}%</a></p>
+        <img src="{{ p.image.url }}" width='30' class="card-img-top"  alt="Product 1">
+        <div class="card-body">
+            <p><a href="">{{p.category.title}}</a></p>
+            <h5 class="card-title">{{p.title}}</h5>
+            <p class="card-text" style="background-color: red;">{{p.old_price}}</p>
+            <p class="card-text">{{p.price}}</p>
+            <p>By<a href="">{{p.vendor.title}}</a></p>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

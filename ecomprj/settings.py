@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     'z7v-curious-poisson.circumeo-apps.net',
     '127.0.0.1',  # Local development
     'localhost'   # Local development
+    "*"
 ]
 
 
@@ -176,7 +177,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS ={
     'site_header ': "NLE's shop",
     'site_brand':"You Order, We deliver",
-    'site_logo':"assets/img/theme/logo.jpeg",
+    # 'site_logo':"assets/img/theme/logo.jpeg",
     'copyright' : "NLE's_shop.com",
 
 }
