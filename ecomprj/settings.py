@@ -28,7 +28,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = [
-     "*"
+     "*",
     'https://oga-motors-ecom.onrender.com/'   # Local development
   
 ]
