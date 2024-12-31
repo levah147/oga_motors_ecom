@@ -29,10 +29,10 @@ def register_view(request):
         form = UserRegisterForm()
 
     context = {
-        'form': form,
+        'form': form,   
     }
 
-    return render(request, 'core/register.html', context)
+    return render(request, 'userauths/register.html', context)
 
 
 def login_view (request):
@@ -51,7 +51,7 @@ def login_view (request):
             if user is not None:
                 login(request, user)
                 messages.success(request, 'you are logged in.')
-                return redirect('core:index')
+                return redirect('core:index13')
             else:
                 messages.warning(request, "User does not Exist, Create an account.")
 
@@ -59,7 +59,7 @@ def login_view (request):
             messages.warning(request, f'User with {email} does not exist')
 
 
-    return render(request,"core/login.html")
+    return render(request,"userauths/login.html")
 
 def logout_view(request):
     logout(request)
