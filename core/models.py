@@ -59,6 +59,7 @@ class Vendor(models.Model):
 
     title =models.CharField(max_length=100, default="Naterfy")
     image = models.ImageField(upload_to=user_directory_path, default="vendor.jpg")
+    cover_image = models.ImageField(upload_to=user_directory_path, default="vendor.jpg")
     description = models.TextField(null=True, blank=True, default="I am an amazging Vendor ")
 
     address = models.CharField(max_length=100, default="123 Main street.Lokogoma")
@@ -71,6 +72,7 @@ class Vendor(models.Model):
 
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
+    date =models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
 
     class Meta:
@@ -90,14 +92,14 @@ class Product(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null= True, related_name="category")
-    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null= True)
+    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null= True, related_name='products')
     
     title =models.CharField(max_length=100, default="Fresh Pear")
     image = models.ImageField(upload_to=user_directory_path, default="product.jpg")
     description = models.TextField(null=True, blank=True, default="This is the product")
 
-    price = models.DecimalField(max_digits=999999999, decimal_places=2, default="1.99")
-    old_price = models.DecimalField(max_digits=999999999, decimal_places=2, default="2.99")
+    price = models.DecimalField(max_digits=10, decimal_places=2, default="1.99")
+    old_price = models.DecimalField(max_digits=10, decimal_places=2, default="2.99")
 
     specification = models.TextField(null=True, blank=True,)
     # tags = models.ForeignKey(Tags, on_delete=models.SET_NULL, null=True)
@@ -156,7 +158,7 @@ class ProductImages(models.Model):
 
 class CartOder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=999999999, decimal_places=2, default="1.99")
+    price = models.DecimalField(max_digits=10, decimal_places=2, default="1.99")
     paid_status = models.BooleanField(default=False)
     order_date = models.DateTimeField(auto_now_add=True)
     product_status = models.CharField(choices= STATUS_CHOICE, max_length=30, default="processing")
@@ -172,8 +174,8 @@ class CartOderItems(models.Model):
     item = models.CharField( max_length=200 )
     image = models.CharField( max_length=200 )
     qty = models.IntegerField(default=0)
-    price = models.DecimalField(max_digits=999999999, decimal_places=2, default="1.99")
-    total = models.DecimalField(max_digits=999999999, decimal_places=2, default="1.99")
+    price = models.DecimalField(max_digits=10, decimal_places=2, default="1.99")
+    total = models.DecimalField(max_digits=10, decimal_places=2, default="1.99")
 
 
     class Meta:

@@ -38,7 +38,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
      "*",
     'https://oga-motors-ecom.onrender.com/',
-    'https://z7v-curious-poisson.circumeo-apps.net'  # Local development
+    # 'https://z7v-curious-poisson.circumeo-apps.net'  # Local development
   
 ]
 
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     # locals 
     'core',
     'userauths',
-    'corsheaders',
+    # 'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -76,16 +76,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CORS_ALLOWED_ORIGINS = [
-    'https://z7v-curious-poisson.circumeo-apps.net',
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'https://z7v-curious-poisson.circumeo-apps.net',
+# ]
 
 # If you need to allow credentials (cookies, etc.):
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_CREDENTIALS = True
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://z7v-curious-poisson.circumeo-apps.net',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://z7v-curious-poisson.circumeo-apps.net',
+# ]
 
 
 ROOT_URLCONF = 'ecomprj.urls'
@@ -101,6 +101,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processor.default',
             ],
         },
     },
@@ -112,12 +113,12 @@ WSGI_APPLICATION = 'ecomprj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 import dj_database_url
 
@@ -127,16 +128,20 @@ import dj_database_url
 # }
 
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": os.environ["POSTGRES_DB"],
-#         "USER": os.environ["POSTGRES_USER"],
-#         "PASSWORD": os.environ["POSTGRES_PASSWORD"],
-#         "HOST": os.environ["POSTGRES_HOST"],
-#         "PORT": os.environ["POSTGRES_PORT"],
-#     }
-# }
+from decouple import config
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':config("DB_NAME"),
+        'USER' :config("DB_USER"),
+        'PASSWORD' :config("DB_PASSWORD"),
+        'HOST' :config("DB_HOST"),
+        'PORT' :config("DB_PORT"),
+    }
+}
+
+
 
 
 # Password validation
@@ -196,7 +201,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS ={
     'site_header ': "NLE's shop",
     'site_brand':"You Order, We deliver",
-    # 'site_logo':"assets/img/theme/logo.jpeg",
+    'site_logo':"assets/images/logo-icon.png",
     'copyright' : "NLE's_shop.com",
 
 }

@@ -1009,17 +1009,12 @@
                             <li><a href="#">Lookbook</a></li>
                         </ul>
                     </li>
+                    {% comment %} ////////////////////////// {% endcomment %}
                     <li>
-                        <a href="product.html" class="sf-with-ul">Product</a>
-                        <ul>
-                            <li><a href="product.html">Default</a></li>
-                            <li><a href="product-centered.html">Centered</a></li>
-                            <li><a href="product-extended.html"><span>Extended Info<span class="tip tip-new">New</span></span></a></li>
-                            <li><a href="product-gallery.html">Gallery</a></li>
-                            <li><a href="product-sticky.html">Sticky Info</a></li>
-                            <li><a href="product-sidebar.html">Boxed With Sidebar</a></li>
-                            <li><a href="product-fullwidth.html">Full Width</a></li>
-                            <li><a href="product-masonry.html">Masonry Sticky Info</a></li>
+                        <a href="product.html" class="sf-with-ul">Categories</a>
+                        <ul>{% for c in Categories %}
+                            <li><a href="product.html">{{c.title}}</a></li>
+                           {% endfor %}
                         </ul>
                     </li>
                     <li>

@@ -64,22 +64,21 @@
                                 </div><!-- End .megamenu megamenu-md -->
                                 </li>
                                 <li>
-                                    <a href="product.html" class="sf-with-ul">Product</a>
+                                    <a href="{% url 'core:category-list' %}" class="sf-with-ul">Categories</a>
 
                                     <div class="megamenu megamenu-sm">
                                         <div class="row no-gutters">
                                             <div class="col-md-6">
                                                 <div class="menu-col">
-                                                    <div class="menu-title">Product Details</div><!-- End .menu-title -->
+                                                    <div class="menu-title">Category Details</div><!-- End .menu-title -->
                                                     <ul>
-                                                        <li><a href="product.html">Default</a></li>
-                                                        <li><a href="product-centered.html">Centered</a></li>
-                                                        <li><a href="product-extended.html"><span>Extended Info<span class="tip tip-new">New</span></span></a></li>
-                                                        <li><a href="product-gallery.html">Gallery</a></li>
-                                                        <li><a href="product-sticky.html">Sticky Info</a></li>
-                                                        <li><a href="product-sidebar.html">Boxed With Sidebar</a></li>
-                                                        <li><a href="product-fullwidth.html">Full Width</a></li>
-                                                        <li><a href="product-masonry.html">Masonry Sticky Info</a></li>
+                                                        {% for c in Categories %}
+
+
+                                                        <li><a href="{% url 'core:category_product_list' c.cid %}">{{c.title}}</a></li>
+                                                       {% endfor %}
+                                                       <li><a href="product-extended.html"><span>Extended Info<span class="tip tip-new">New</span></span></a></li>
+
                                                     </ul>
                                                 </div><!-- End .menu-col -->
                                             </div><!-- End .col-md-6 -->
@@ -90,7 +89,7 @@
                                                         <img src="{% static 'assets/images/menu/banner-2.jpg' %}" alt="Banner">
 
                                                         <div class="banner-content banner-content-bottom">
-                                                            <div class="banner-title text-white">New Trends<br><span><strong>spring 2019</strong></span></div><!-- End .banner-title -->
+                                                            <div class="banner-title text-white">New Trends<br><span><strong>spring 2025</strong></span></div><!-- End .banner-title -->
                                                         </div><!-- End .banner-content -->
                                                     </a>
                                                 </div><!-- End .banner -->
@@ -291,53 +290,24 @@
                             </a>
                         </div><!-- End .col-sm-4 col-lg-2 -->
 
+                          {% for c in Categories %}
+                
                         <div class="col-6 col-sm-4 col-lg-2">
-                            <a href="category.html" class="cat-block">
+                            <a href="{% url 'core:category_product_list' c.cid %}" class="cat-block">
                                 <figure>
                                     <span>
-                                        <img src="{% static 'assets/images/demos/demo-13/cats/2.jpg' %}" alt="Category image">
+                                        <img src="{{ c.image.url }}" alt="Category image">
                                     </span>
                                 </figure>
 
-                                <h3 class="cat-block-title">Lighting</h3><!-- End .cat-block-title -->
+                                <h3 class="cat-block-title">{{ c.title }}</h3><!-- End .cat-block-title -->
                             </a>
                         </div><!-- End .col-sm-4 col-lg-2 -->
-
-                        <div class="col-6 col-sm-4 col-lg-2">
-                            <a href="category.html" class="cat-block">
-                                <figure>
-                                    <span>
-                                        <img src="{% static 'assets/images/demos/demo-13/cats/3.jpg' %}" alt="Category image">
-                                    </span>
-                                </figure>
-
-                                <h3 class="cat-block-title">Smart Phones</h3><!-- End .cat-block-title -->
-                            </a>
-                        </div><!-- End .col-sm-4 col-lg-2 -->
-
-                        <div class="col-6 col-sm-4 col-lg-2">
-                            <a href="category.html" class="cat-block">
-                                <figure>
-                                    <span>
-                                        <img src="{% static 'assets/images/demos/demo-13/cats/4.jpg' %}" alt="Category image">
-                                    </span>
-                                </figure>
-
-                                <h3 class="cat-block-title">Televisions</h3><!-- End .cat-block-title -->
-                            </a>
-                        </div><!-- End .col-sm-4 col-lg-2 -->
-
-                        <div class="col-6 col-sm-4 col-lg-2">
-                            <a href="category.html" class="cat-block">
-                                <figure>
-                                    <span>
-                                        <img src="{% static 'assets/images/demos/demo-13/cats/5.jpg' %}" alt="Category image">
-                                    </span>
-                                </figure>
-
-                                <h3 class="cat-block-title">Cooking</h3><!-- End .cat-block-title -->
-                            </a>
-                        </div><!-- End .col-sm-4 col-lg-2 -->
+                       
+                       
+                                    {% comment %} <span>{{c.category.count }} Product {{c.category.count|pluralize:"s" }} </span> {% endcomment %}
+                          
+                                    {% endfor %}
 
                         <div class="col-6 col-sm-4 col-lg-2">
                             <a href="category.html" class="cat-block">
